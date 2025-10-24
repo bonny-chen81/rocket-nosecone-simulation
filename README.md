@@ -8,7 +8,7 @@
 ---
 
 <details>
-<summary>📖 Table of Contents</summary>
+<summary> Table of Contents</summary>
 
 - [1. Abstract](#1-abstract)
 - [2. Introduction](#2-introduction)
