@@ -160,6 +160,5 @@ As this research continues, the next steps will include:
 
 ---
 
-**Full Documentation:** [github.com/bonny-chen81/bionic-nosecone](https://github.com/bonny-chen81/bionic-nosecone)
 
 [↑ Back to top](#1-abstract)
