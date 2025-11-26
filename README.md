@@ -1,7 +1,7 @@
 #  Biomimetic Nose Cone Design for Aerodynamic Optimization
 
 **Author:** Bonny Chen  
-**Project Type:** Ongoing Research / MIT Maker Portfolio  
+**Project Type:** Ongoing Research  
 **Software:** OpenFOAM, Autodesk Fusion 360, Python (Open3D, Trimesh), Excel  
 **Keywords:** Biomimicry, Rocket Design, Aerodynamics, Curvature Blending, CFD Simulation  
 
