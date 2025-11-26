@@ -119,9 +119,6 @@ Validation using Excel computation (`bionosecone_blend_caculate.xlsx`) confirmed
 | \( r_{blend}(x) \) | Radius interpolation accuracy | Error < 1% for most segments |
 | Flow profiles | Pressure & streamline visualization | Smooth, symmetric flow |
 
-### Figures
-![radius_profiles](assets/radius_profiles.png)  
-![alpha_profiles](assets/alpha_profiles.png)
 
 ---
 
