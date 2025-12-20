@@ -138,6 +138,17 @@ As this research continues, the next steps will include:
 - Refining parametric control through Python-Fusion integration for automated geometry generation.
 
 ---
+## Excel Nose Cone Blending
+
+This project includes an Excel-based workflow for blending a **tangent ogive nose cone**
+with a **bionic-inspired profile** to generate a smooth axial radius distribution.
+
+The Excel workbook is used as a **geometry pre-processing step** before CAD modeling
+in Autodesk Inventor and CFD simulation.
+
+- Workbook file: `/excel/bionosecone_blend_caculate.xlsx`
+- Quick overview (conceptual): `/excel/README_quickstart.md`
+- Technical documentation (math & parameters): `/excel/README_technical.md`
 
 ## 10. Repository Structure
 ```
@@ -150,9 +161,12 @@ As this research continues, the next steps will include:
 │   ├── 0/
 │   ├── constant/
 │   └── system/
-├── data/                       # Excel-based parameter study
-│   └── bionosecone_blend_caculate.xlsx
-└── README.md                   # This file
+├── excel/                       # Excel-based nose cone blending workflow
+│   ├── bionosecone_blend_caculate.xlsx
+│   ├── README_quickstart.md
+│   └── README_technical.md
+└── README.md                   # Project overview
+
 ```
 
 ---
