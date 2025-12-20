@@ -172,28 +172,25 @@ in Autodesk Inventor and CFD simulation.
 
 ## 10. Repository Structure
 ```
-├── assets/                     # Graphs and simulation images
-├── STL/                        # Nose cone geometry files
-│   ├── nosecone_ogive.stl
-│   ├── nosecone_bio_full.stl
-│   └── nosecone_blend.stl
-├── OpenFOAM/                   # CFD case files
-│   ├── 0/
-│   ├── constant/
-│   └── system/
-├── excel/                       # Excel-based nose cone blending workflow
+├── assets/                         # Graphs and simulation images
+│   └── cfd_iteration/              # Early OpenFOAM failure/iteration screenshots
+│       ├── threshold_error.png
+│       ├── misalignment.png
+│       ├── rough_surface_p.png
+│       ├── rough_surface_streamtracer.png
+│       ├── rough_surface_steamtracer2.png
+│       └── README.md
+├── blendingcode/                   # Scripts for curve fitting / blending (if applicable)
+├── constant/                       # OpenFOAM case: constant/
+├── system/                         # OpenFOAM case: system/
+├── excel/                          # Excel-based nose cone blending workflow
 │   ├── bionosecone_blend_caculate.xlsx
 │   ├── README_quickstart.md
 │   └── README_technical.md
-assets/
-├── cfd_iteration/
-│   ├── threshold_error.png
-│   ├── misalignment.png
-│   ├── rough_surface_p.png
-│   ├── rough_surface_streamtracer.png
-│   ├── rough_surface_steamtracer2.png
-│   └── README.md
-└── README.md                   # Project overview
+├── MakerPortfolio.pdf
+├── allmodel.zip
+├── bionosecone blend caculate.xlsx
+└── nosecone_case.foam
 
 ```
 
