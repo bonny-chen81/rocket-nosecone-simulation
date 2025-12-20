@@ -172,24 +172,23 @@ in Autodesk Inventor and CFD simulation.
 
 ## 10. Repository Structure
 ```
-├── assets/                         # Graphs and simulation images
-│   └── cfd_iteration/              # Early OpenFOAM failure/iteration screenshots
+├── assets/                         # Figures and visualization assets
+│   └── cfd_iteration/              # Early OpenFOAM failure / iteration screenshots
 │       ├── threshold_error.png
 │       ├── misalignment.png
 │       ├── rough_surface_p.png
 │       ├── rough_surface_streamtracer.png
-│       ├── rough_surface_steamtracer2.png
+│       ├── rough_surface_streamtracer2.png
 │       └── README.md
-├── blendingcode/                   # Scripts for curve fitting / blending (if applicable)
-├── constant/                       # OpenFOAM case: constant/
-├── system/                         # OpenFOAM case: system/
+├── 0/                              # OpenFOAM initial & boundary conditions
+├── constant/                       # OpenFOAM physical properties and mesh
+├── system/                         # OpenFOAM solver and numerical settings
 ├── excel/                          # Excel-based nose cone blending workflow
 │   ├── bionosecone_blend_caculate.xlsx
 │   ├── README_quickstart.md
 │   └── README_technical.md
 ├── MakerPortfolio.pdf
 ├── allmodel.zip
-├── bionosecone blend caculate.xlsx
 └── nosecone_case.foam
 
 ```
