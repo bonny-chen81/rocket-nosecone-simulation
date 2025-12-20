@@ -150,6 +150,26 @@ in Autodesk Inventor and CFD simulation.
 - Quick overview (conceptual): `/excel/README_quickstart.md`
 - Technical documentation (math & parameters): `/excel/README_technical.md`
 
+### Early CFD Issues (OpenFOAM)
+
+<p align="center">
+  <img src="assets/cfd_iteration/threshold_error.png" width="500">
+</p>
+
+<p align="center">
+  <em>Incorrect threshold causing rectangular geometry</em>
+</p>
+
+
+<p align="center">
+  <img src="assets/cfd_iteration/rough_surface_streamtracer.png" width="500">
+</p>
+
+<p align="center">
+  <em>Surface irregularities causing non-physical flow artifacts</em>
+</p>
+
+
 ## 10. Repository Structure
 ```
 ├── assets/                     # Graphs and simulation images
@@ -165,6 +185,14 @@ in Autodesk Inventor and CFD simulation.
 │   ├── bionosecone_blend_caculate.xlsx
 │   ├── README_quickstart.md
 │   └── README_technical.md
+assets/
+├── cfd_iteration/
+│   ├── threshold_error.png
+│   ├── misalignment.png
+│   ├── rough_surface_p.png
+│   ├── rough_surface_streamtracer.png
+│   ├── rough_surface_steamtracer2.png
+│   └── README.md
 └── README.md                   # Project overview
 
 ```
