@@ -5,6 +5,8 @@
 **Software:** OpenFOAM, Autodesk Fusion 360, Python (Open3D, Trimesh), Excel  
 **Keywords:** Biomimicry, Rocket Design, Aerodynamics, Curvature Blending, CFD Simulation  
 
+This project was conducted independently during high school as an exploratory engineering study.
+
 ---
 
 <details>
