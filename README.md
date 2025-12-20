@@ -113,31 +113,22 @@ Validation using Excel computation (`bionosecone_blend_caculate.xlsx`) confirmed
 - \( RMSE_{r} = 0.0044~m \): minimal deviation from theoretical radius blending.
 
 ---
+## 7. Future Work
+Future work will continue with a staged validation approach that balances numerical
+analysis and physical testing. After finalizing the blended nose cone geometry using
+the Excel-based parametric model, the design will be imported into Autodesk Inventor
+for preliminary CFD analysis.
 
-## 7. Validation and Calculation Check
-| Variable | Description | Result |
-|-----------|--------------|---------|
-| \( \alpha(x) \) | Blending function behavior | Matches smoothstep perfectly |
-| \( r_{blend}(x) \) | Radius interpolation accuracy | Error < 1% for most segments |
-| Flow profiles | Pressure & streamline visualization | Smooth, symmetric flow |
+Inventor-based CFD will be used as a qualitative sanity check to evaluate overall
+flow trends and identify obvious geometric issues before physical fabrication,
+rather than as a source of final aerodynamic performance metrics.
 
+Following numerical inspection, physical prototypes will be fabricated for
+experimental validation. Low-speed wind tunnel testing with smoke-flow visualization
+will be conducted to observe flow attachment, separation, and symmetry. Image-based
+analysis of the flow patterns will then guide further geometric refinement before
+subsequent real-world testing.
 
----
-
-## 8. Reflection
-Through this project, I learned that engineering design is not merely the imitation of form but the **translation of natural logic into controllable systems**. This journey from asymmetrical replication to symmetric functional blending reflects the core spirit of **scientific curiosity and iteration**.
-
-> “Curiosity led me to imitate nature; reasoning taught me to understand it.”
-
-The refined design captures nature’s aerodynamic intelligence while conforming to engineering constraints—a balance between inspiration and precision.
-
----
-
-## 9. Future Work
-As this research continues, the next steps will include:
-- Extending the smoothstep blending to include texture-based surface patterns (e.g., sharkskin microstructures).
-- Conducting high-Reynolds-number simulations and comparing results under supersonic flow.
-- Refining parametric control through Python-Fusion integration for automated geometry generation.
 
 ---
 ## Excel Nose Cone Blending
