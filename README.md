@@ -2,7 +2,7 @@
 
 **Author:** Bonny Chen  
 **Project Type:** Ongoing Research  
-**Software:** OpenFOAM, Autodesk Fusion 360, Python (Open3D, Trimesh), Excel  
+**Software:** OpenFOAM, Autodesk Inventor Python (Open3D, Trimesh), Excel, Docker, PycharmCE  
 **Keywords:** Biomimicry, Rocket Design, Aerodynamics, Curvature Blending, CFD Simulation  
 
 This project was conducted independently during high school as an exploratory engineering study.
