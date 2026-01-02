@@ -12,23 +12,38 @@ This project was conducted independently during high school as an exploratory en
 <details>
 <summary> Table of Contents</summary>
 
-- [1. Abstract](#1-abstract)
-- [2. Introduction](#2-introduction)
-- [3. Literature Review](#3-literature-review)
-- [4. Research Methodology](#4-research-methodology)
-  - [4.1 Design and Modeling](#41-design-and-modeling)
-  - [4.2 Simulation and Fabrication](#42-simulation-and-fabrication)
-  - [4.3 Physical Testing](#43-physical-testing)
-- [5. Key Limitation and Redefinition](#5-key-limitation-and-redefinition)
-- [6. Revised Research Direction](#6-revised-research-direction)
-- [7. Validation and Calculation Check](#7-validation-and-calculation-check)
-- [8. Reflection](#8-reflection)
-- [9. Future Work](#9-future-work)
-- [10. Repository Structure](#10-repository-structure)
+- [Current Direction](#current-direction)
+  - [1. Abstract](#1-abstract)
+  - [2. Introduction](#2-introduction)
+  - [3. Literature Review](#3-literature-review)
+  - [4. Research Methodology](#4-research-methodology)
+    - [4.1 Design and Modeling](#41-design-and-modeling)
+    - [4.2 Simulation and Fabrication](#42-simulation-and-fabrication)
+    - [4.3 Physical Testing](#43-physical-testing)
+  - [5. Key Limitation and Redefinition](#5-key-limitation-and-redefinition)
+  - [6. Revised Research Direction](#6-revised-research-direction)
+  - [7. Future Work](#7-future-work)
+  - [Excel Nose Cone Blending](#excel-nose-cone-blending)
+  - [Early CFD Issues (OpenFOAM)](#early-cfd-issues-openfoam)
+- [Future Development Plan](#future-development-plan)
+  - [Project Overview](#project-overview)
+  - [Project Objective](#project-objective)
+  - [1. Establishing Baseline Nose Cone Geometries](#1-establishing-baseline-nose-cone-geometries)
+  - [2. Parameterization of Bio-Inspired Geometry](#2-parameterization-of-bio-inspired-geometry)
+  - [3. Expanding Evaluation Metrics Beyond Drag Coefficient](#3-expanding-evaluation-metrics-beyond-drag-coefficient)
+  - [4. Introduction of Stability Considerations Through Unsteady CFD](#4-introduction-of-stability-considerations-through-unsteady-cfd)
+  - [5. Stability-Aware Performance Optimization](#5-stability-aware-performance-optimization)
+  - [6. Expected Outcomes and Research Impact](#6-expected-outcomes-and-research-impact)
+  - [7. Long-Term Research Extensions](#7-long-term-research-extensions)
+  - [Quick Summary](#quick-summary)
 
+- [Repository Structure](#repository-structure)
 </details>
 
 ---
+
+## Current Direction
+
 
 ## 1. Abstract
 This ongoing study integrates **biomimetics**, **curve fitting**, and **fluid dynamics** to explore naturally occurring shapes that exhibit low drag and high stability, applying these findings to rocket nose cone design. Inspired by high-speed biological forms such as sharks, swallows, sailfish, and eagles, I developed a computational and experimental workflow combining **Open3D** modeling, **Python scripting**, **CFD simulation (OpenFOAM)**, and **wind tunnel testing**. 
@@ -293,13 +308,13 @@ Potential future extensions of this project include:
 
 ---
 
-## Summary
+## Quick Summary
 
 > **This project reframes bio-inspired nose cone design from a drag-minimization problem into a stability-aware aerodynamic optimization problem.**
 
 
 
-## 10. Repository Structure
+## Repository Structure
 ```
 ├── assets/                         # Figures and visualization assets
 │   └── cfd_iteration/              # Early OpenFOAM failure / iteration screenshots
