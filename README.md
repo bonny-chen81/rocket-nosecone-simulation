@@ -129,7 +129,6 @@ will be conducted to observe flow attachment, separation, and symmetry. Image-ba
 analysis of the flow patterns will then guide further geometric refinement before
 subsequent real-world testing.
 
-
 ---
 ## Excel Nose Cone Blending
 
@@ -161,6 +160,143 @@ in Autodesk Inventor and CFD simulation.
 <p align="center">
   <em>Surface irregularities causing non-physical flow artifacts</em>
 </p>
+
+# Future Development Plan
+
+### *(Stability-Aware Optimization of Bio-Inspired Rocket Nose Cones)*
+
+## Project Overview
+
+This project aims to develop a **research-grade aerodynamic optimization framework** for bio-inspired rocket nose cones that minimizes drag **while maintaining flow stability** across realistic flight Reynolds number ranges.
+
+Rather than treating CFD as a visualization tool for drag estimation, this project reframes nose cone design as a **stability-aware aerodynamic problem**, integrating unsteady flow behavior into performance evaluation and optimization.
+
+---
+
+## Project Objective
+
+To design and evaluate bio-inspired rocket nose cones that achieve:
+
+- Low aerodynamic drag within the operational velocity range  
+- Robust flow behavior that avoids asymmetric or unstable wake dynamics at high Reynolds numbers  
+
+---
+
+## 1. Establishing Baseline Nose Cone Geometries  
+### *(Reference Framework for Comparative Analysis)*
+
+The project begins by defining conventional nose cone geometries as **baseline reference cases**, including:
+
+- Simple cone  
+- Ogive nose cone  
+- von Kármán nose cone  
+
+These geometries are **not selected for optimal performance**, but to serve as controlled reference standards.  
+Without a baseline, improvements or regressions introduced by bio-inspired modifications cannot be objectively assessed.
+
+This approach treats nose cone optimization as a **controlled comparative experiment**, where each geometric modification is evaluated relative to a known aerodynamic standard rather than in isolation.
+
+---
+
+## 2. Parameterization of Bio-Inspired Geometry  
+### *(From Visual Imitation to Engineering Variables)*
+
+Rather than directly replicating biological shapes, bio-inspired designs are transformed into **parameterized engineering models**.
+
+Key geometric features extracted from biological references (e.g., bird or fish head profiles) include:
+
+- Curvature distribution along the nose length  
+- Tip bluntness radius  
+- Axial pressure-gradient smoothness  
+
+This parameterization enables systematic control over geometric features and allows each design variation to be evaluated quantitatively.  
+Through this process, the nose cone evolves from an aesthetic imitation into a **tunable aerodynamic model** suitable for scientific analysis.
+
+---
+
+## 3. Expanding Evaluation Metrics Beyond Drag Coefficient  
+### *(Early Detection of Flow Degradation)*
+
+Traditional optimization focuses primarily on the drag coefficient (\(C_d\)).  
+In this project, drag remains a key metric but is no longer the sole indicator of performance.
+
+Additional flow-field diagnostics include:
+
+- Symmetry of surface pressure distribution  
+- Emergence of lateral velocity components in the wake  
+- Sensitivity of separation points to changes in Reynolds number  
+
+Rather than asking only:
+
+> *“How low is the drag?”*
+
+the analysis addresses a more critical question:
+
+> *“As velocity increases, does this geometry approach a flow instability that could rapidly degrade performance?”*
+
+This shift marks the transition from **competition-level CFD** to **research-grade aerodynamic analysis**.
+
+---
+
+## 4. Introduction of Stability Considerations Through Unsteady CFD  
+### *(Initial Stability Screening)*
+
+To assess flow robustness, **unsteady CFD simulations** are conducted across a range of Reynolds numbers while keeping the nose cone rigidly fixed.
+
+The simulations monitor the spontaneous emergence of:
+
+- Lateral velocity fluctuations  
+- Asymmetric vortex structures  
+- Low-frequency oscillations in aerodynamic forces  
+
+The objective is not full aeroelastic modeling, but an **initial stability screening** to identify whether a given geometry exhibits sensitivity to perturbations.
+
+This step evaluates whether a design is *stable*, not merely *fast*.
+
+---
+
+## 5. Stability-Aware Performance Optimization  
+### *(Balancing Speed and Robustness)*
+
+A key insight guiding this project is:
+
+> **The geometry with the lowest drag is not necessarily the geometry that remains stable at high speeds.**
+
+True high-speed performance requires a balance between:
+
+- Low aerodynamic drag within the operational velocity range  
+- Resistance to flow-induced asymmetry or instability  
+
+Optimization is therefore conducted with **dual objectives**: minimizing drag while avoiding configurations that approach instability thresholds under realistic operating conditions.
+
+---
+
+## 6. Expected Outcomes and Research Impact
+
+By integrating stability considerations into nose cone optimization, this project aims to:
+
+- Identify bio-inspired geometric features that reduce drag **without compromising flow robustness**  
+- Establish a reproducible framework for evaluating aerodynamic designs under increasing Reynolds numbers  
+- Demonstrate how CFD can be used not only for performance prediction, but for **stability-informed engineering decision-making**
+
+This methodology bridges intuitive bio-inspired design and rigorous aerodynamic analysis, enabling nose cone designs that achieve **reliable high-speed performance** rather than fragile peak efficiency.
+
+---
+
+## 7. Long-Term Research Extensions
+
+Potential future extensions of this project include:
+
+- Mapping stability boundaries across broader Reynolds number ranges  
+- Applying reduced-order modeling techniques to characterize dominant wake modes  
+- Coupling aerodynamic stability with structural flexibility for aeroelastic analysis  
+
+---
+
+## Summary
+
+> **This project reframes bio-inspired nose cone design from a drag-minimization problem into a stability-aware aerodynamic optimization problem.**
+
 
 
 ## 10. Repository Structure
