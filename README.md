@@ -124,6 +124,21 @@ with blending ratios \( \alpha = 0.2, 0.4, 0.6, 0.8 \). The resulting shapes wer
 
 ### 4.3 Physical Testing
 A custom low-speed wind tunnel was constructed for flow visualization using smoke filaments. Pressure sensors (BMP388) measured surface pressure variations, validating CFD accuracy. Launch tests using commercial fireworks rockets were conducted to evaluate stability and altitude.
+<p align="center">
+  <img src="images/Simple wind tunnel design.png" width="500">
+</p>
+
+<p align="center">
+  <em>Simple wind tunnel design</em>
+</p>
+
+<p align="center">
+  <img src="images/windtunnel operation.png" width="500">
+</p>
+
+<p align="center">
+  <em>Wind tunnel operation diagram</em>
+</p>
 
 ---
 
