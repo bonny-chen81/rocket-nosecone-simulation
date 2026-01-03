@@ -79,16 +79,41 @@ Despite wide use in vehicle and aircraft design, **biomimetic blending for rocke
 ### 4.1 Design and Modeling
 **(1) Selection of Biological Models**  
 Four species were selected for their high-speed, low-drag morphologies: shark, sailfish, swallow, and eagle. 3D models were obtained from open databases (Sketchfab), oriented using **Open3D**, and cropped to isolate the head sections.
+<p align="center">
+  <img src="origimodel.png" width="500">
+</p>
 
 **(2) Model Preprocessing**  
 - Automatic orientation alignment via principal axes computation.
 - Laplacian smoothing to remove noise and preserve curvature continuity.
 - Head extraction defined within adjustable AABB boundaries.
+<p align="center">
+  <img src="parameter.png" width="500">
+</p>
+
+<p align="center">
+  <em>Cutting parameter</em>
+</p>
+
+<p align="center">
+  <img src="contour.png" width="500">
+</p>
+
+<p align="center">
+  <em>Result contour</em>
+</p>
 
 **(3) Shape Blending**  
 The standard ogive model and biological head models were converted into point clouds. Weighted interpolation generated blended geometries:
 \[ \vec{p}_{blend} = (1 - \alpha)\vec{p}_{eng} + \alpha\vec{p}_{bio} \]
 with blending ratios \( \alpha = 0.2, 0.4, 0.6, 0.8 \). The resulting shapes were reconstructed via convex hull algorithms and exported as STL meshes.
+<p align="center">
+  <img src="blend.png" width="500">
+</p>
+
+<p align="center">
+  <em>Blend result form</em>
+</p>
 
 ### 4.2 Simulation and Fabrication
 - **Software:** OpenFOAM v12 (simulation) and ParaView v5.13 (visualization).  
