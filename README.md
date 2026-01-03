@@ -80,7 +80,7 @@ Despite wide use in vehicle and aircraft design, **biomimetic blending for rocke
 **(1) Selection of Biological Models**  
 Four species were selected for their high-speed, low-drag morphologies: shark, sailfish, swallow, and eagle. 3D models were obtained from open databases (Sketchfab), oriented using **Open3D**, and cropped to isolate the head sections.
 <p align="center">
-  <img src="origimodel.png" width="500">
+  <img src="images/origimodel.png" width="500">
 </p>
 
 **(2) Model Preprocessing**  
@@ -88,7 +88,7 @@ Four species were selected for their high-speed, low-drag morphologies: shark, s
 - Laplacian smoothing to remove noise and preserve curvature continuity.
 - Head extraction defined within adjustable AABB boundaries.
 <p align="center">
-  <img src="parameter.png" width="500">
+  <img src="images/parameter.png" width="500">
 </p>
 
 <p align="center">
@@ -96,7 +96,7 @@ Four species were selected for their high-speed, low-drag morphologies: shark, s
 </p>
 
 <p align="center">
-  <img src="contour.png" width="500">
+  <img src="images/contour.png" width="500">
 </p>
 
 <p align="center">
@@ -108,7 +108,7 @@ The standard ogive model and biological head models were converted into point cl
 \[ \vec{p}_{blend} = (1 - \alpha)\vec{p}_{eng} + \alpha\vec{p}_{bio} \]
 with blending ratios \( \alpha = 0.2, 0.4, 0.6, 0.8 \). The resulting shapes were reconstructed via convex hull algorithms and exported as STL meshes.
 <p align="center">
-  <img src="blend.png" width="500">
+  <img src="images/blend.png" width="500">
 </p>
 
 <p align="center">
