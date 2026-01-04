@@ -96,7 +96,7 @@ This ensures a C¹-continuous transition in the blending region.
   - blending weight
   - final blended radius
 
-## 6. What it actually doing
+## 6. What is it actually doing
 First, I identify the dominant geometric features of a fish head and represent them using three bump parameters: amplitude (A), center location (c), and width (w), together with the nose cone length and radius.
 
 These parameters are defined in the extras sheet, which does not generate final geometry, but instead computes control functions such as bump distributions and blending weights.
