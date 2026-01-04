@@ -96,9 +96,20 @@ This ensures a C¹-continuous transition in the blending region.
   - blending weight
   - final blended radius
 
+## 6. What it actually doing
+First, I identify the dominant geometric features of a fish head and represent them using three bump parameters: amplitude (A), center location (c), and width (w), together with the nose cone length and radius.
+
+These parameters are defined in the extras sheet, which does not generate final geometry, but instead computes control functions such as bump distributions and blending weights.
+
+The baseline ogive profile and the biological profile are then provided to the blend sheet, where they are combined using a position-dependent blending weight, α(x). Parameters such as blend start location and blending span control where and how the transition occurs.
+
+In the blend process, the smooth ramp variable (blend_progress) represents the normalized blending progress from 0 to 1, while α(x) increases toward a specified maximum value rather than necessarily reaching full replacement.
+
+The smooth ramp and α(x) values are used as diagnostic variables to verify that the geometric transition is continuous and numerically stable, rather than as shape-defining parameters.
+
 ---
 
-## 6. CAD Workflow (Autodesk Inventor)
+## 7. CAD Workflow (Autodesk Inventor)
 
 1. Export the blended `(x, r)` data from Excel.
 2. Import points into Inventor as a sketch.
@@ -109,7 +120,7 @@ This approach separates **geometric reasoning** (Excel) from **solid modeling** 
 
 ---
 
-## 7. Notes on Smoothness
+## 8. Notes on Smoothness
 
 - The blending weight is C¹-continuous.
 - The final radius curve is continuous, but curvature continuity depends on the input profiles.
