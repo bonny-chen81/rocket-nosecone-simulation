@@ -215,7 +215,7 @@ with a **bionic-inspired profile** to generate a smooth axial radius distributio
 The Excel workbook is used as a **geometry pre-processing step** before CAD modeling
 in Autodesk Inventor and CFD simulation.
 
-- Workbook file: `/excel/bionosecone_blend_caculate.xlsx`
+- Workbook file: `/excel/bionosecone_blend_caculate_FIXED.xlsx`
 - Quick overview (conceptual): `/excel/README_quickstart.md`
 - Technical documentation (math & parameters): `/excel/README_technical.md`
 
