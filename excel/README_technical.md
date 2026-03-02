@@ -5,81 +5,66 @@ This workbook implements a **parametric blending method** to generate a smooth n
 The output is designed for **Autodesk Inventor**, where the blended profile is revolved into a 3D solid.
 
 ---
-
 ## 1. Engineering Baseline: Tangent Ogive
 
-The engineering reference profile is a **tangent ogive nose cone**, defined by:
+The engineering reference profile is based on a **Tangent Ogive** geometry, characterized by a circular arc that meets the rocket body Tangentially at the base. This profile is defined by:
 
-- nose length: \( L \)
-- base radius: \( R \)
-- generating circle radius:
-\[
-\rho = \frac{R^2 + L^2}{2R}
-\]
+* **Nose Length ($L$):** Total axial length of the cone.
+* **Base Radius ($R$):** Radius at the aft end of the nose cone.
+* **Generating Circle Radius ($\rho$):** The radius of the circular arc that forms the profile:
+    $$\rho = \frac{R^2 + L^2}{2R}$$
 
-The tangent ogive radius as a function of axial position \(x\) is:
+### Profile Equation
+The local radius $r_{eng}(x)$ at any axial position $x \in [0, L]$ is calculated as:
 
-\[
-r_{\text{eng}}(x)
-=
-\sqrt{\rho^2 - (L - x)^2}
--
-(\rho - R)
-\]
+$$r_{eng}(x) = \sqrt{\rho^2 - (L - x)^2} - (\rho - R)$$
 
-These values are precomputed and placed in the `blend` sheet as `r_eng_m`.
+These values are precomputed and stored as `r_eng_m` within the `blend` sheet of the simulation environment.
 
 ---
 
 ## 2. Bionic Profile
 
-The bionic profile \( r_{\text{bio}}(x) \) is obtained by:
-- digitizing a biological contour,
-- scaling it to match the same total length and base radius,
-- interpolating it onto the same axial grid as the ogive.
-
-This ensures pointwise compatibility during blending.
+The bionic profile $r_{bio}(x)$ is developed through a three-step integration process:
+* **Digitization:** Extracting high-fidelity coordinates from biological contours.
+* **Normalization:** Scaling the geometry to maintain consistency with the baseline length ($L$) and base radius ($R$).
+* **Grid Alignment:** Interpolating the data onto the identical axial grid as the Tangent Ogive to ensure pointwise compatibility during blending.
 
 ---
 
 ## 3. Blending Formulation
 
-The final blended radius is defined as:
+The final hybrid radius $r_{blend}(x)$ is computed using a weighted linear interpolation between the engineering and biological models:
 
-\[
-r_{\text{blend}}(x)
-=
-(1-\alpha(x))\, r_{\text{eng}}(x)
-+
-\alpha(x)\, r_{\text{bio}}(x)
-\]
+$$r_{blend}(x) = (1 - \alpha(x))r_{eng}(x) + \alpha(x)r_{bio}(x)$$
 
 ---
 
 ## 4. Blending Weight Function
 
-A normalized transition coordinate is defined as:
+To achieve a seamless transition between the engineering base and bionic tip, we define a normalized transition coordinate $t(x)$:
 
-\[
-t(x) = \mathrm{clamp}
-\left(
-\frac{x - x_0}{\Delta x},\; 0,\; 1
-\right)
-\]
+$$t(x) = \text{clamp} \left( \frac{x - x_0}{\Delta x}, 0, 1 \right)$$
 
-where:
-- \(x_0 = \text{blend\_start\_fracL} \cdot L\)
-- \(\Delta x = \text{blend\_span\_fracL} \cdot L\)
+Where the spatial constraints are defined by:
 
-A **smoothstep function** is used:
+* $x_0 = \text{f}_{start} \cdot L$ (Onset of blending)
+* $\Delta x = \text{f}_{span} \cdot L$ (Transition interval)
 
-\[
-\alpha(x) = \alpha_{\max} \left( 3t^2 - 2t^3 \right)
-\]
+The weight factor $\alpha(x)$ utilizes a **Cubic Smoothstep** function to ensure $C^1$ geometric continuity:
 
-This ensures a C¹-continuous transition in the blending region.
+$$\alpha(x) = \alpha_{max} (3t^2 - 2t^3)$$
 
----
+
+
+This formulation prevents sharp curvature discontinuities, which is critical for maintaining stable boundary layer attachment in high-speed flows.
+
+
+### Why Smoothstep?
+This formulation prevents sharp curvature discontinuities at the blending boundaries. Maintaining a smooth transition is critical for:
+1. **Stable Boundary Layer Attachment:** Reducing the risk of flow separation.
+2. **Minimizing Wave Drag:** Ensuring gradual pressure recovery in high-speed (supersonic) flows.
+3. **Structural Integrity:** Avoiding stress concentrations at geometric junctions.
 
 ## 5. Workbook Structure
 
