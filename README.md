@@ -105,8 +105,18 @@ Four species were selected for their high-speed, low-drag morphologies: shark, s
 
 **(3) Shape Blending**  
 The standard ogive model and biological head models were converted into point clouds. Weighted interpolation generated blended geometries:
-\[ \vec{p}_{blend} = (1 - \alpha)\vec{p}_{eng} + \alpha\vec{p}_{bio} \]
-with blending ratios \( \alpha = 0.2, 0.4, 0.6, 0.8 \). The resulting shapes were reconstructed via convex hull algorithms and exported as STL meshes.
+$$r(x) = (1 - \alpha(x))r_{eng}(x) + \alpha(x)r_{bio}(x)$$
+
+Where the transition factor $\alpha(x)$ is governed by a modulated **smoothstep** function to ensure $C^1$ continuity:
+
+$$\alpha(x) = \alpha_{max} \cdot \text{smoothstep}(0.2L, 0.8L; x)$$
+
+* $r_{eng}(x)$: Radius profile of the standard aerodynamic geometry (e.g., Haack Series).
+* $r_{bio}(x)$: Radius profile derived from biological inspiration.
+* $L$: Total length of the nose cone.
+
+The peak transition factor $\alpha_{max}$ was tested at discrete intervals:
+$$\alpha_{max} = 0.2, 0.4, 0.6, 0.8$$
 <p align="center">
   <img src="images/blend.png" width="500">
 </p>
@@ -152,20 +162,32 @@ This realization redefined the research question:
 
 ## 6. Revised Research Direction
 ### Functional Biomimicry through Local Curvature Blending
-The improved model extracts only the **front curvature segment** (roughly 20–30% of the total nose length) and blends it into the engineering base using a smooth transition function.
 
-\[ r(x) = (1 - \alpha(x))r_{eng}(x) + \alpha(x)r_{bio}(x) \]
-with \( \alpha(x) = \alpha_{max} \cdot smoothstep(0.2L, 0.8L; x) \).
+To maintain aerodynamic efficiency while integrating biological advantages, the model extracts the **front curvature segment** (approximately 20–30% of the total length) and blends it into the engineering base using a weighted interpolation:
 
-This ensures:
-- Axisymmetric flow and stable pressure field.  
-- Continuous geometric curvature (C¹ smoothness).  
-- Retained **functional essence of biomimicry**—flow redirection and gradual deceleration.
+$$r(x) = (1 - \alpha(x))r_{eng}(x) + \alpha(x)r_{bio}(x)$$
+
+The transition factor $\alpha(x)$ is governed by a modulated **smoothstep** function to ensure $C^1$ geometric continuity:
+
+$$\alpha(x) = \alpha_{max} \cdot \text{smoothstep}(0.2L, 0.8L; x)$$
+
+This mathematical approach ensures:
+* **Axisymmetric flow** and a stable pressure field across the hull.
+* **$C^1$ smoothness**, preventing turbulence-inducing discontinuities.
+* **Functional Biomimicry**, specifically optimized flow redirection and gradual pressure recovery.
+
+
 
 ### Quantitative Verification
-Validation using Excel computation (`bionosecone_blend_caculate.xlsx`) confirmed:
-- \( RMSE_{\alpha} = 1.7×10^{-11} \): nearly perfect adherence to smoothstep curve.  
-- \( RMSE_{r} = 0.0044~m \): minimal deviation from theoretical radius blending.
+Validation through computational analysis (see `bionosecone_blend_caculate.xlsx`) confirms high-fidelity adherence to the theoretical model:
+
+| Metric | Value | Significance |
+| :--- | :--- | :--- |
+| **$RMSE_{\alpha}$** | $1.7 \times 10^{-11}$ | Near-perfect alignment with smoothstep curve. |
+| **$RMSE_{r}$** | $0.0044 \text{ m}$ | Minimal radial deviation from blending theory. |
+
+We evaluated the performance impact by varying the peak transition factor:
+$$\alpha_{max} \in \{0.2, 0.4, 0.6, 0.8\}$$
 
 ---
 ## 7. Future Work
